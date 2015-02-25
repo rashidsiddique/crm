@@ -71,19 +71,20 @@ ActiveRecord::Schema.define(version: 20150225141238) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name",                     limit: 255
-    t.decimal  "price",                                precision: 8, scale: 2
+    t.decimal  "price",                                  precision: 8, scale: 2
     t.integer  "quantity",                 limit: 4
     t.integer  "status",                   limit: 4
-    t.datetime "created_at",                                                                   null: false
-    t.datetime "updated_at",                                                                   null: false
-    t.decimal  "trial_price",                          precision: 8, scale: 2
-    t.boolean  "has_trial",                limit: 1,                           default: false
+    t.datetime "created_at",                                                                     null: false
+    t.datetime "updated_at",                                                                     null: false
+    t.decimal  "trial_price",                            precision: 8, scale: 2
+    t.boolean  "has_trial",                limit: 1,                             default: false
     t.integer  "trial_days",               limit: 4
-    t.boolean  "is_recurring",             limit: 1,                           default: false
+    t.boolean  "is_recurring",             limit: 1,                             default: false
     t.integer  "recurring_type",           limit: 4
     t.integer  "recurring_no_of_payments", limit: 4
     t.integer  "recurring_custom_type",    limit: 4
     t.string   "recurring_custom_bill_on", limit: 255
+    t.text     "description",              limit: 65535
   end
 
   create_table "users", force: :cascade do |t|

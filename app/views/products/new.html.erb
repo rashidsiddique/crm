@@ -1,0 +1,75 @@
+<%= form_for :product, url:  products_path do |f| %>
+ 
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@product.errors.count, "error") %> prohibited
+        this product from being saved:
+      </h2>
+      <ul>
+        <% @product.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  
+  <h2>
+    Add New Product<br>
+  </h2>
+
+  <p>
+    <%= f.text_field :name , placeholder: "name"%>
+  </p>
+
+  <p>
+    <%= f.text_area :description , placeholder: "short description"%>
+  </p>
+
+  <p>
+    <%= f.select :category_ids, @categories.collect{|c| [c.name, c.id]}%>
+  </p>
+
+  <p>
+    <%= f.select :status, Product::STATUS_VALUES %>
+  </p>
+
+  <p>
+    <%= f.text_field :price , placeholder: "price"%>
+  </p>
+
+  <p>
+    <%= f.check_box :is_recurring %>
+    <%= f.label "Recurring billing" %> 
+  </p>
+
+  <p>
+    <%= f.select :recurring_type, Product::RECUURING_BILLING_TYPE %>
+  </p>
+
+  <p>
+    <%= f.text_field :recurring_no_of_payments , placeholder: "No of Payments"%>
+  </p>
+
+  <p>
+    <%= f.check_box :has_trial %>
+    <%= f.label "Allow free trial" %> 
+  </p>
+
+  <p>
+    <%= f.text_field :trial_price , placeholder: "Trial Price"%>
+  </p>
+
+  <p>
+    <%= f.text_field :trial_days , placeholder: "Trial Days"%>
+  </p>
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', products_path %>

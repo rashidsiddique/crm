@@ -7,5 +7,6 @@ class AddColumnsToProduct < ActiveRecord::Migration
     add_column :products, :recurring_no_of_payments, :integer
     add_column :products, :recurring_custom_type, :integer
     add_column :products, :recurring_custom_bill_on, :string
+    add_column :products, :description, :text
   end
 end
