@@ -10,8 +10,13 @@ Rails.application.routes.draw do
     registrations: "admins/registrations"
   }
   
-  
-  resources :products
+  resources :admins do
+    collection do
+      resources :products
+    end  
+  end
+
+  # resources :products
   resources :categories
 
   root to: "welcome#show"
