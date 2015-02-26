@@ -9,6 +9,12 @@ class ProductsController < AdminsController
     @categories = Category.all
   end
 
+  def batch_products    
+    @product_batch = Product.new
+    @product = Product.new
+    @categories = Category.all
+  end
+
   def create  
     @product = Product.new(product_params)
     if @product.save

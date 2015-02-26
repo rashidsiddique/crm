@@ -1,0 +1,15 @@
+<%= form_for @product_batch do |f| %>
+  
+  <h2>Add Multiple Products</h2>
+  <%= f.fields_for :products do |builder| %>
+    <%= render "bulk_products", :f => builder %>
+  <% end %>
+  <div class = "batch-submit">
+    <%= f.submit 'Save all Products' %>
+  </div>
+
+  <div class = "add-more-products">
+    <button type="button" class = "add-more-products">Add more products</button>  
+  </div>
+
+<% end %>

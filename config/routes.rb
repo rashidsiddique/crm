@@ -11,13 +11,21 @@ Rails.application.routes.draw do
   }
   
   resources :admins do
+    
     collection do
-      resources :products
-    end  
-  end
+      resources :products do 
+        
+        collection do 
+          get :batch_products
+        end
+        
+      end        
+    end
 
-  # resources :products
-  resources :categories
+    collection do
+      resources :categories
+    end   
+  end
 
   root to: "welcome#show"
 end
