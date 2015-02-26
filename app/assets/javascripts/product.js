@@ -25,4 +25,12 @@ $(document).ready(function(){
         }  
     });
 
+
+  $('body').on('click', '.add_new_category', function() {
+    $('.product_category').hide();
+    $('.add_new_category').hide();
+    $('.save-category').show();
+  });  
+
+
 });

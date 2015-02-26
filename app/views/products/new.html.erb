@@ -17,6 +17,7 @@
     });  
   });
 </script>
+
 <%= form_for :product, url:  products_path do |f| %>
  
   <% if @product.errors.any? %>
@@ -29,6 +30,9 @@
     </div>
   <% end %>
  
+ <div id="category_erros">
+  <p></p>
+ </div> 
   
   <h2>
     Add New Product<br>
@@ -43,7 +47,8 @@
   </div></br>
 
   <div class = "product_category">
-    <%= f.select :category_ids, @categories.present? ? @categories.collect{|c| [c.name, c.id]} : "" , {prompt: "Select categories"} %>
+    <%= f.select :category_ids, @categories.present? ? @categories.collect{|c| [c.name, c.id]} : "" , {prompt: "Category"}, id: "list_of_categories" %>
+    <button type="button" class = "add_new_category">+Add new</button>   
   </div></br>
 
   <div class = "product_status">
@@ -102,5 +107,14 @@
   </p>
  
 <% end %>
- 
+
+
+<%= form_for :category, url: categories_path, :remote => true  do |c| %>
+  
+  <div class = "save-category">
+    <%= c.text_field :name , placeholder: "Category name" %>
+    <%= c.submit 'Save Category'%>
+  </div>
+<% end %>
+
 <%= link_to 'Back', products_path %>
