@@ -3,12 +3,12 @@ $(document).ready(function(){
   $('.product_recurring_no_of_payments').hide();  
     $('#product_recurring').change(function(){
         if(this.checked){
+          $('.recurring').show('slow');
           $('.product_recurring_type').show('slow');
           $('.product_recurring_no_of_payments').show('slow');
         }
         else{
-          $('.product_recurring_type').hide('slow');
-          $('.product_recurring_no_of_payments').hide('slow');
+          $('.recurring').hide('slow');
         }  
     });
 

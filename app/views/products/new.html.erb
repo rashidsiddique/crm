@@ -21,10 +21,6 @@
  
   <% if @product.errors.any? %>
     <div id="error_explanation">
-      <h2>
-        <%= pluralize(@product.errors.count, "error") %> prohibited
-        this product from being saved:
-      </h2>
       <ul>
         <% @product.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
@@ -47,38 +43,45 @@
   </div></br>
 
   <div class = "product_category">
-    <%= f.select :category_ids, @categories.collect{|c| [c.name, c.id]}%>
+    <%= f.select :category_ids, @categories.present? ? @categories.collect{|c| [c.name, c.id]} : "" , {prompt: "Select categories"} %>
   </div></br>
 
   <div class = "product_status">
-    <%= f.select :status, Product::STATUS_VALUES %>
+    <%= f.select :status, Product::STATUS_VALUES, {prompt: "Select status"}%>
   </div></br>
 
   <div class = "product_price">
     <%= f.text_field :price , placeholder: "price"%>
   </div></br>
 
+
+
   <div class = "product_is_recurring">
     <%= f.check_box :is_recurring, id: "product_recurring" %>
     <%= f.label "Recurring billing" %> 
   </div></br>
 
-  <div class = "product_recurring_type">
-    <%= f.select :recurring_type, Product::RECUURING_BILLING_TYPE, id: "product_recurring_type"%>
-  </div></br>
+  <div class = "recurring">
+  
+    <div class = "product_recurring_type">
+      <%= f.select :recurring_type, Product::RECUURING_BILLING_TYPE, {prompt: "Select billing type"}, id: "product_recurring_type"%>
+    </div></br>
 
-  <div class = "recurring_custom_bill_on">
-    <%= f.label "Bill every:" %>
-    <%= f.text_field :recurring_custom_bill_on , value: 1%>
-  </div></br>
+    <div class = "recurring_custom_bill_on">
+      <%= f.label "Bill every:" %>
+      <%= f.text_field :recurring_custom_bill_on , value: 1%>
+    </div></br>
 
-  <div class = "recurring_custom_type">
-    <%= f.select :recurring_custom_type, Product::RECUURING_CUSTOME_TYPE %>
-  </div></br>
+    <div class = "recurring_custom_type">
+      <%= f.select :recurring_custom_type, Product::RECUURING_CUSTOME_TYPE, {prompt: "Select custom billing type"} %>
+    </div></br>
 
-  <div class = "product_recurring_no_of_payments">
-    <%= f.text_field :recurring_no_of_payments , placeholder: "No of Payments"%>
-  </div></br>
+    <div class = "product_recurring_no_of_payments">
+      <%= f.text_field :recurring_no_of_payments , placeholder: "No of Payments"%>
+    </div></br>
+
+  </div>
+
 
   <div class = "product_has_trial">
     <%= f.check_box :has_trial, id: "product_trial" %>
