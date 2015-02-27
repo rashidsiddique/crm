@@ -18,6 +18,14 @@ Rails.application.routes.draw do
         collection do 
           get :batch_products
         end
+
+        collection do
+          post :add_batch
+        end
+
+        collection do
+          post :validate_batch
+        end
         
       end        
     end

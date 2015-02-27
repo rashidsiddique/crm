@@ -1,15 +1,42 @@
-<%= form_for @product_batch do |f| %>
-  
-  <h2>Add Multiple Products</h2>
-  <%= f.fields_for :products do |builder| %>
-    <%= render "bulk_products", :f => builder %>
+<script>
+  function submitBatch(){
+    
+    var batch = {};
+    batch['products'] = []
+    $('.form-batch').each(function(){
+      var list = $(this).serializeJSON();
+      batch['products'].push(list);
+    });
+
+    //batch = batch.serialize();
+    //alert(batch);
+    $.ajax({
+      url:'validate_batch',
+       type:"POST",
+       dataType:'json',
+       data: batch,
+       processData: true,
+      success: function (msg){
+        alert(msg);
+      },
+      error: function (xhr, status){
+        alert(xhr.error);
+      }
+    });
+  }  
+</script>
+
+
+<h2>Add Multiple Products</h2>
+<div id = "batch_product" class = "bulk-products">
+  <%= render  partial: "form"%>
+</div> 
+<div class = "all-products">
+  <%= button_tag "Save all products", id: "save-all-products", onclick: "submitBatch();" %> 
+</div>
+<div class = "add-more-products">
+  <%= form_for :add_batch_products, url: add_batch_products_path, :remote => true  do |c| %>
+    <%= c.text_field :no_of_forms , value: 1, class: "no_of_forms"%>
+    <%= c.submit 'Add more products'%>
   <% end %>
-  <div class = "batch-submit">
-    <%= f.submit 'Save all Products' %>
-  </div>
-
-  <div class = "add-more-products">
-    <button type="button" class = "add-more-products">Add more products</button>  
-  </div>
-
-<% end %>
+</div>

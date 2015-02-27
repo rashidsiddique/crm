@@ -1,3 +1,4 @@
+<%= form_for :product, :html => {:class => "form-batch"}, url:  products_path do |f| %>
 <div class = "left-container">
    <div class = "product_name">
     <%= f.text_field :name , placeholder: "name"%>
@@ -67,6 +68,11 @@
    <div class = "product_trial_days">
       <%= f.text_field :trial_days , placeholder: "Trial Days"%>
    </div></br>
+
+     <p>
+  </p>
+ 
+<% end %>
 
 </div>
 <%= form_for :category, url: categories_path, :remote => true  do |c| %>
