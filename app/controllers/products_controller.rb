@@ -34,17 +34,18 @@ class ProductsController < AdminsController
 
 
   def validate_batch
-    product_response = {message: true} 
+    product_response = [] 
     params[:products].each do |product| 
       @batch = Product.new(product_params(product.last['product']))
-      if @batch.valid?
-        product_response.push(message: true)
-      else
-        product_response.push(message: false)
-      end    
-   end
+      @batch.valid? ? product_response.push(message: true) :  product_response.push(message: false, product_errors:  @batch.errors.full_messages.first)
+    end
     respond_to do |format|   
-      format.json { render json: {:success => false, :message => "products not created"} }
+      error  = product_response.detect{|pr| pr[:message] == false}
+      if error.present?  
+        format.json { render json: {success: false, errors: list_of_errors(product_response)}}
+      else
+        format.json { render json: {:success => true} }
+      end   
     end
   end
     # params[:products].each do |key| 
@@ -77,6 +78,14 @@ class ProductsController < AdminsController
   def product_params(params)
     ac_params = ActionController::Parameters.new(params)
     ac_params.permit(:name, :description, :price, :category_ids, :status, :is_recurring, :recurring_type, :recurring_custom_bill_on, :recurring_custom_type, :recurring_no_of_payments, :has_trial, :trial_price, :trial_days)
+  end
+
+  def list_of_errors(errors_list)
+    errors = []
+    messages = errors_list.each do |e|
+      e[:product_errors].present? ? errors.push(e[:product_errors]) : ""
+    end
+    errors  
   end
 
 end
