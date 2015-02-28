@@ -20,6 +20,22 @@ function submitBatch(){
         output+="</ul>";
         document.getElementById("errors").innerHTML=output;
       }
+      else{
+        $.ajax({
+          url:'/admins/products/',
+           type:"POST",
+           dataType:'json',
+           data: batch,
+           processData: true,
+          success: function (response){ 
+            alert(response)
+          },
+          error: function (xhr, status){
+            alert(xhr.error);
+          }
+        });
+      }
+
     },
     error: function (xhr, status){
       alert(xhr.error);
