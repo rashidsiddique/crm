@@ -44,9 +44,9 @@ class ProductsController < AdminsController
 
   def validate_batch
     product_response = [] 
-    params[:products].each do |product| 
+    params[:products].each do |product|
       @batch = Product.new(batch_product_params(product.last['product']))
-      @batch.valid? ? product_response.push(message: true) :  product_response.push(message: false, product_errors:  @batch.errors.full_messages.first)
+      @batch.valid? ? product_response.push(message: true) :  product_response.push(message: false, counter: product.first, product_errors:  @batch.errors.full_messages)
     end
     respond_to do |format|   
       error  = product_response.detect{|pr| pr[:message] == false}
@@ -83,6 +83,7 @@ class ProductsController < AdminsController
   def list_of_errors(errors_list)
     errors = []
     messages = errors_list.each do |e|
+      e[:counter].present? ? errors.push(e[:counter]) : ""
       e[:product_errors].present? ? errors.push(e[:product_errors]) : ""
     end
     errors  

@@ -2,6 +2,29 @@ function submitBatch(){
   var batch = {};
   batch['products'] = []
   $('.form-batch').each(function(){
+    console.log(this);
+    jQuery.validator.messages.required = "";
+    $(this).validate({
+      rules: {
+        "product[name]": {
+        required: true
+        },
+        "product[description]": {
+        required: true,
+        },
+        "product[price]": {
+        required: true
+        },
+        "product[category_ids]": {
+        required: true
+        }
+      },  
+      highlight: function(element) {
+        $(element).removeClass('label.error').addClass('form-error');
+      },
+    });
+    $(this).valid();
+
     var list = $(this).serializeJSON();
     batch['products'].push(list);
   });
@@ -13,12 +36,6 @@ function submitBatch(){
      processData: true,
     success: function (response){
       if (response.success == false){ 
-        var output="<ul>";
-        for (var i in response.errors) {
-            output+="<li>" + response.errors[i] +"</li>";
-        }
-        output+="</ul>";
-        document.getElementById("errors").innerHTML=output;
       }
       else{
         $.ajax({

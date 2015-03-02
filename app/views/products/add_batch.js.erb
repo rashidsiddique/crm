@@ -3,9 +3,6 @@
   var new_id = 'batch-form'+<%=i%>;
   $('#batch-form').attr('id', new_id);
   $('#new-category').attr('id', 'new-category'+<%=i%>);
-
-  // $(this).attr('name', this.name + '_' + new_id);
-  // $(this).attr('value', 'test');
 <% end %>
 
 $(".product_is_recurring").each(function (){
@@ -26,10 +23,10 @@ $(".product_trial").each(function (index){
 
   if(this.checked){
     trial.parent().parent().find('.product_trial_price').show('slow');
-    trial.parent().parent().find('.product_trial_days').show('slow');
+    trial.parent().parent().find('.product_trial_days').show();
   }
   else{
     trial.parent().parent().find('.product_trial_price').hide('slow');
-    trial.parent().parent().find('.product_trial_days').hide('slow');
+    trial.parent().parent().find('.product_trial_days').hide();
   }
 });

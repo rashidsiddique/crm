@@ -38,3 +38,9 @@ h2 {
 .save-category{
   display: none;
 }
+.form-error {
+    border: 2px solid red;
+}
+label.error {
+  display: none;
+}
