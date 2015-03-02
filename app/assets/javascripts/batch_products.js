@@ -28,7 +28,7 @@ function submitBatch(){
            data: batch,
            processData: true,
           success: function (response){ 
-            alert(response)
+            window.location.href = '/admins/products/';
           },
           error: function (xhr, status){
             alert(xhr.error);
@@ -41,4 +41,23 @@ function submitBatch(){
       alert(xhr.error);
     }
   });
-}  
+}
+
+function addNewCategory() {
+  $('.product_category').hide();
+  $('.add_new_category').hide();
+  $('.save-category').show();
+}
+
+function saveCategory() {
+  var new_category = $("#new-category-field").val();
+  alert(new_category)
+  $.ajax({
+      url: "/admins/categories",
+      type:"POST",
+      data: {"category": {"name": new_category}},
+      success: function(data) {
+          console.log(data);
+      }
+  });
+}      

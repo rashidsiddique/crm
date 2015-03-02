@@ -1,3 +1,5 @@
-<%(1..@no_of_forms).each do %>
+<%(1..@no_of_forms).each do |i| %>
   $('#batch_product').append('<%=j render partial: 'form'%>')
+  // $('#batch_product button').attr({ name:'button'+i});
+  $("#new-category").attr.name = ("button"+<%=i%>);
 <% end %>

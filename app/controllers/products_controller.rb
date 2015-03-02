@@ -35,6 +35,7 @@ class ProductsController < AdminsController
 
   def add_batch
     @no_of_forms = batch_param.present? ? batch_param.to_i : 1
+    @categories = Category.all
     respond_to do |format|
       format.js
     end

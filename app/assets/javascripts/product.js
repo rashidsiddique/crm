@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  jQuery(".best_in_place").best_in_place();
+  $('.save-category').hide();
   $('.product_recurring_type').hide();
   $('.product_recurring_no_of_payments').hide();  
     $('#product_recurring').change(function(){
@@ -24,13 +26,4 @@ $(document).ready(function(){
           $('.product_trial_days').hide('slow');
         }  
     });
-
-
-  $('body').on('click', '.add_new_category', function() {
-    $('.product_category').hide();
-    $('.add_new_category').hide();
-    $('.save-category').show();
-  });  
-
-
 });
