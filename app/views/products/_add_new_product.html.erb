@@ -28,8 +28,13 @@
 
   <div class = "product_category">
     <%= f.select :category_ids, @categories.present? ? @categories.collect{|c| [c.name, c.id]} : "" , {prompt: "Category"}, id: "list_of_categories" %>
-    <button type="button" class = "add_new_category">+Add new</button>   
+      <%= button_tag("+Add new ",type: 'button', onClick: "addNewCategory()",id:"new-category")%>   
   </div></br>
+
+  <div class = "save-category">
+    <%= text_field_tag 'categories', nil, placeholder: 'Add new Category', id: "new-category-field" %>
+    <%= button_tag("Save Category ",type: 'button', onClick: "saveCategory()")%>
+  </div></br> 
 
   <div class = "product_status">
     <%= f.select :status, Product::STATUS_VALUES, {prompt: "Select status"}%>
@@ -86,13 +91,4 @@
     <%= f.submit %>
   </p>
  
-<% end %>
-
-
-<%= form_for :category, url: categories_path, :remote => true  do |c| %>
-  
-  <div class = "save-category">
-    <%= c.text_field :name , placeholder: "Category name" %>
-    <%= c.submit 'Save Category'%>
-  </div>
 <% end %>

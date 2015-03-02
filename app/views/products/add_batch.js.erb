@@ -1,5 +1,35 @@
 <%(1..@no_of_forms).each do |i| %>
   $('#batch_product').append('<%=j render partial: 'form'%>')
-  // $('#batch_product button').attr({ name:'button'+i});
-  $("#new-category").attr.name = ("button"+<%=i%>);
+  var new_id = 'batch-form'+<%=i%>;
+  $('#batch-form').attr('id', new_id);
+  $('#new-category').attr('id', 'new-category'+<%=i%>);
+
+  // $(this).attr('name', this.name + '_' + new_id);
+  // $(this).attr('value', 'test');
 <% end %>
+
+$(".product_is_recurring").each(function (){
+  var recurring = $(this);
+
+  if(this.checked){
+    recurring.parent().parent().find('.recurring').show('slow');
+  }
+  else{
+    recurring.parent().parent().find('.recurring').hide();
+    recurring.parent().parent().find('.recurring_custom_bill_on').hide();
+    recurring.parent().parent().find('.recurring_custom_type').hide();
+  }
+});
+
+$(".product_trial").each(function (index){
+  var trial = $(this);
+
+  if(this.checked){
+    trial.parent().parent().find('.product_trial_price').show('slow');
+    trial.parent().parent().find('.product_trial_days').show('slow');
+  }
+  else{
+    trial.parent().parent().find('.product_trial_price').hide('slow');
+    trial.parent().parent().find('.product_trial_days').hide('slow');
+  }
+});

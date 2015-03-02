@@ -1,6 +1,6 @@
 <div id = "errors">
 </div>
-<%= form_for :product, :html => {:class => "form-batch"}, url:  products_path do |f| %>
+<%= form_for :product, :html => {id: "batch-form", :class => "form-batch"}, url:  products_path do |f| %>
 <div class = "left-container">
    <div class = "product_name">
     <%= f.text_field :name , placeholder: "name"%>
@@ -20,11 +20,11 @@
 
    <div class = "product_category">      
       <%= f.select :category_ids, @categories.present? ? @categories.collect{|c| [c.name, c.id]} : "" , {prompt: "Category"}, id: "list_of_categories" %>
-      <%= button_tag("+Add new ",type: 'button', onClick: "addNewCategory()",id:"new-category")%> 
+      <%= button_tag("+Add new ",type: 'button', onClick: "addNewCategory(this)", id:"new-category")%> 
    </div></br>
       
     <div class = "save-category">
-      <%= text_field_tag 'categories', nil, placeholder: 'Enter search term...', id: "new-category-field" %>
+      <%= text_field_tag 'categories', nil, placeholder: 'Add new Category', id: "new-category-field" %>
       <%= button_tag("Save Category ",type: 'button', onClick: "saveCategory()")%>
     </div></br>   
 
@@ -34,37 +34,35 @@
 
 </div>
 
-<div class = "right-contianer">
+<div class="right-contianer">
    
-   <div class = "product_is_recurring">
-      <%= f.check_box :is_recurring, id: "product_recurring" %>
+   <div>
+      <%= f.check_box :is_recurring, class: 'product_is_recurring' %>
       <%= f.label "Recurring billing" %> 
    </div></br>
 
-   <div class = "recurring">
+   <div class="recurring">
   
-      <div class = "product_recurring_type">
-         <%= f.select :recurring_type, Product::RECUURING_BILLING_TYPE, {prompt: "Select billing type"}, id: "product_recurring_type"%>
-      </div></br>
+      <%= f.select :recurring_type, Product::RECUURING_BILLING_TYPE, {prompt: "Select billing type"}, class: "product_recurring_type"%>
 
-      <div class = "recurring_custom_bill_on">
-         <%= f.label "Bill every:" %>
-         <%= f.text_field :recurring_custom_bill_on , value: 1%>
-      </div></br>
+    <div class="recurring_custom_bill_on">
+      <%= f.label "Bill every:" %>
+      <%= f.text_field :recurring_custom_bill_on , value: 1%>
+    </div></br>
 
-      <div class = "recurring_custom_type">
-         <%= f.select :recurring_custom_type, Product::RECUURING_CUSTOME_TYPE, {prompt: "Select custom billing type"} %>
-      </div></br>
+    <div class="recurring_custom_type">
+      <%= f.select :recurring_custom_type, Product::RECUURING_CUSTOME_TYPE, {prompt: "Select custom billing type"} %>
+    </div></br>
 
-      <div class = "product_recurring_no_of_payments">
-         <%= f.text_field :recurring_no_of_payments , placeholder: "No of Payments"%>
-      </div></br>
+    <div class="product_recurring_no_of_payments">
+      <%= f.text_field :recurring_no_of_payments , placeholder: "No of Payments"%>
+    </div></br>
 
    </div>
 
 
    <div class = "product_has_trial">
-      <%= f.check_box :has_trial, id: "product_trial" %>
+      <%= f.check_box :has_trial, class: "product_trial" %>
       <%= f.label "Allow free trial" %> 
    </div></br>
 

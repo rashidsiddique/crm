@@ -43,21 +43,19 @@ function submitBatch(){
   });
 }
 
-function addNewCategory() {
-  $('.product_category').hide();
-  $('.add_new_category').hide();
-  $('.save-category').show();
+function addNewCategory(add_new) {
+  $(add_new).parent('.product_category').hide();
+  $(add_new).parent('.add_new_category').hide();
+  $(add_new).parent().siblings('.save-category').show();
 }
 
 function saveCategory() {
   var new_category = $("#new-category-field").val();
-  alert(new_category)
   $.ajax({
       url: "/admins/categories",
       type:"POST",
       data: {"category": {"name": new_category}},
       success: function(data) {
-          console.log(data);
       }
   });
 }      

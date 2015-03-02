@@ -14,8 +14,8 @@
 
 .right-contianer {
     float: left;
-    width: 300px;
     margin-right: 50px;
+    width: 500px;
 }
 h2 {
   width: 500px;
@@ -24,7 +24,7 @@ h2 {
 }
 .add-more-products {
     margin: 0 auto;
-    width: 170px;
+    width: 0px;
 }
 
 .no_of_forms {
@@ -34,4 +34,7 @@ h2 {
     float: left;
     width: 152px;
     margin-left: 200px;
+}
+.save-category{
+  display: none;
 }
