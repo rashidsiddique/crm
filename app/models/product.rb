@@ -15,11 +15,13 @@ class Product < ActiveRecord::Base
   default_scope { order('created_at DESC') }
 
 
+
+
   def self.search(search)
     if search
-      where('name LIKE ?', "%#{search}%")
+      self.where("name like ?", "%#{search}%")
     else
-      all
+      self.all
     end
   end
 

@@ -1,5 +1,9 @@
-<%= link_to 'Add batch products', batch_products_products_path %>
-<div class = "single-product">
-  <%= render  partial: "add_new_product"%>
+<div class = "new_single_product">
+  <div class="heading">
+    <span>Add New Product</span>
+    <%= link_to 'Add batch products', batch_products_products_path %>
+  </div>
+  <div class = "single-product">
+    <%= render  partial: "add_new_product"%>
+  </div>
 </div>
-<%= link_to 'Back', products_path %>

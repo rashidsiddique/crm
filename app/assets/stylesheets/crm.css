@@ -61,29 +61,6 @@ label.error {
   display: none;
 }
 
-input{
-  border: 1px solid #c8c8c8;
-    border-radius: 0;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
-    color: black;
-    height: 40px;
-    padding-left: 15px;
-    width: 166px;
-}
-textarea{
-   border: 1px solid #c8c8c8;
-    border-radius: 0;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
-    margin-top: 20px;
-    resize: none;
-}
-select{
-      background: none repeat scroll 0 0 #fff;
-    border: 1px solid #c8c8c8;
-    border-radius: 0;
-    height: 40px;
-}
-
 .bulk-products{
 
 }
@@ -96,15 +73,16 @@ select{
   width: 190px;
 }
 .product_category {
-    width: 375px;
 }
 .product_category button {
-  background: none repeat scroll 0 0 #5db327;
-  border-color: #5db327;
-  border-radius: 3px;
-  font-size: 14px;
-  margin-top: 20px;
-  width: 160px;
+   background: none repeat scroll 0 0 #5db327;
+    border-color: #5db327;
+    border-radius: 3px;
+    color: white;
+    font-size: 23px;
+    height: 37px;
+    margin-top: 20px;
+    width: 160px;
 }
 
 .recuring-product {
@@ -131,14 +109,9 @@ select{
 }
 .recurring{
    display: block;
-    margin-top: 15px;
     width: 185px;
 }
-.product_trial_price > input{
-   margin-left: -145px;
-    margin-right: -11px;
-    margin-top: 9px;
-}
+
 .product-save-button {
     background: none repeat scroll 0 0 #5db327;
     border-color: #5db327;
@@ -154,3 +127,131 @@ select{
   display: flex;
   margin-top: 30px;
 }
+.new_single_product {
+  background: none repeat scroll 0 0 #fcfcfc;
+  display: table;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 60px 20px 20px 40px;
+  width: 500px;
+}
+.heading span {
+    font-size: 16px;
+    font-weight: bold;
+}
+.heading a {
+  background: none repeat scroll 0 0 #ffffff;
+  border: 1px solid #d9d9d9;
+  color: #256b31;
+  float: right;
+  font-size: 13px;
+  padding: 5px;
+  text-align: center;
+  width: 130px;
+}
+.new-product-form input {
+  border: 1px solid #d9d9d9;
+  border-radius: 0;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+  height: 40px;
+  padding-left: 15px;
+  width: 100%;
+}
+.product_new_name input {
+    margin-top: 20px;
+    width: 100%;
+}
+.product_new_description textarea {
+ border: 1px solid #c8c8c8;
+  border-radius: 0;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+  margin-top: 20px;
+  resize: none;
+  width: 100%;
+  padding-left: 15px;
+}
+.product_category select {
+     background: none repeat scroll 0 0 #fff;
+    border: 1px solid #d9d9d9;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+    height: 40px;
+    margin-top: 20px;
+    width: 100%;
+}
+.product_status select {
+  width: 100%;
+   background: none repeat scroll 0 0 #fff;
+    border: 1px solid #d9d9d9;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+    height: 40px;
+    margin-top: 20px;
+}
+.save-category button{
+background: none repeat scroll 0 0 #5db327;
+    border-color: #5db327;
+    border-radius: 3px;
+    color: white;
+    font-size: 20px;
+    height: 37px;
+    margin-top: 20px;
+    width: 160px;
+  }
+.check-margin{
+  float: left !important;
+  margin-left: 22px;
+
+}
+.product-check-box input {
+    width: 20px;
+}
+.product-check-box label {
+    bottom: 14px;
+    position: relative;
+}
+.trial-check-box{
+  bottom: 28px;
+  position: relative;
+}
+
+.save-product-btn{
+    background: none repeat scroll 0 0 #5db327;
+    border-color: #5db327;
+    border-radius: 3px;
+    color: white;
+    font-size: 23px;
+    height: 40px;
+    margin-top: 20px;
+    width: 400px;
+}
+.select-billing{
+  background: none repeat scroll 0 0 #fff;
+  border: 1px solid #d9d9d9;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+  height: 40px;
+  width: 100%;
+}
+.batch-name input {
+  border: 1px solid #c8c8c8;
+    border-radius: 0;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+    color: black;
+    display: inline;
+    height: 40px;
+    padding-left: 15px;
+    width: 170px;
+}
+.product_description textarea {
+  border: 1px solid #c8c8c8;
+    border-radius: 0;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+    margin-top: 20px;
+    resize: none;
+  }
+.select-status select{
+  margin-top: 0px;
+}
+.set-container{
+  bottom: 215px;
+  left: 40px;
+}  
