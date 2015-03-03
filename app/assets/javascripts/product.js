@@ -13,7 +13,7 @@ $(document).ready(function(){
     }
   });
 
-  $('.single-products').on('click', '.product_is_recurring', function(e){
+  $('.single-product').on('click', '.product_is_recurring', function(e){
 
       var recurring = $(e.target);
 
@@ -34,12 +34,12 @@ $(document).ready(function(){
       trial.parent().parent().find('.product_trial_days').show('slow');
     }
     else{
-      trial.parent().parent().find('.product_trial_price').hide('slow');
-      trial.parent().parent().find('.product_trial_days').hide('slow');
+      trial.parent().parent().find('.product_trial_price').hide();
+      trial.parent().parent().find('.product_trial_days').hide();
     }
   });
 
-  $('.single-products').on('click', '.product_trial', function(e){
+  $('.single-product').on('click', '.product_trial', function(e){
     var trial = $(e.target);
 
     if(this.checked){
@@ -52,7 +52,7 @@ $(document).ready(function(){
     }
   });
 
-  $('.single-products').on('change', '.product_recurring_type', function(e){
+  $('.single-product').on('change', '.product_recurring_type', function(e){
     var custom = $(e.target);
     if (custom.val() == "4"){
       custom.parent().find('.recurring_custom_bill_on').show('slow');

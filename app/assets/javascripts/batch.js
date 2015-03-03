@@ -34,8 +34,8 @@ $(document).ready(function(){
       trial.parent().parent().find('.product_trial_days').show('slow');
     }
     else{
-      trial.parent().parent().find('.product_trial_price').hide('slow');
-      trial.parent().parent().find('.product_trial_days').hide('slow');
+      trial.parent().parent().find('.product_trial_price').hide();
+      trial.parent().parent().find('.product_trial_days').hide();
     }
   });
 

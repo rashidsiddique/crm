@@ -1,7 +1,7 @@
 class ProductsController < AdminsController
   
   def index
-    @products = Product.all
+    @products = Product.all.order("updated_at DESC")
   end
 
   def new
@@ -12,6 +12,11 @@ class ProductsController < AdminsController
   def batch_products
     @product = Product.new
     @categories = Category.all
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+    @categories = Category.all 
   end
 
   def create 
@@ -58,6 +63,16 @@ class ProductsController < AdminsController
     end
   end
 
+
+  def update
+    @product = Product.find(params[:id])
+   
+    if @product.update(product_params)
+      redirect_to products_path
+    else
+      render 'edit'
+    end
+  end
 
   def destroy
     @product = Product.find(params[:id])
