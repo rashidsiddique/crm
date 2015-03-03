@@ -64,4 +64,13 @@ $(document).ready(function(){
     }
   });
 
+
+  $('.product_category').on('click', '.new-category', function(e){
+    var category = $(e.target);
+    $(category).parent('.product_category').hide();
+    $(category).parent('.add_new_category').hide();
+    $(category).parent().siblings('.save-category').show();
+  });
+
+
 });
