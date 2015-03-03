@@ -1,5 +1,5 @@
-<div id = "errors">
-</div>
+<div class="batch-append">
+
 <%= form_for :product, :html => {id: "batch-form", :class => "form-batch"}, url:  products_path do |f| %>
 <div class = "left-container">
    <div class = "product_name">
@@ -41,7 +41,7 @@
       <%= f.label "Recurring billing" %> 
    </div></br>
 
-   <div class="recurring">
+   <div class="recurring custom-select">
   
       <%= f.select :recurring_type, Product::RECUURING_BILLING_TYPE, {prompt: "Select billing type"}, class: "product_recurring_type"%>
 
@@ -66,11 +66,11 @@
       <%= f.label "Allow free trial" %> 
    </div></br>
 
-   <div class = "product_trial_price">
+   <div class = "product_trial_price custom-trial">
       <%= f.text_field :trial_price , placeholder: "Trial Price"%>
    </div></br>
 
-   <div class = "product_trial_days">
+   <div class = "product_trial_days custom-trial">
       <%= f.text_field :trial_days , placeholder: "Trial Days"%>
    </div></br>
 
@@ -79,4 +79,5 @@
  
 <% end %>
 
+</div>
 </div>

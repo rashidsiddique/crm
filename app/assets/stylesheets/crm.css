@@ -1,7 +1,7 @@
 .left-container {
     margin-left: 30px;
-    width: 455px;
     float: left;
+    margin-top:20px; 
   }
 
 .center-container {
@@ -26,8 +26,8 @@
   background: #f0f0f0;
   border: solid 1px #dedede;
   font-size: 14px;
-  height: 195px;
   padding: 20px;
+  display: inline-block;
 }
 
 .add-more-products {
@@ -51,11 +51,22 @@
     width: 152px;
     margin-left: 200px;
 }
+.all-products button{
+   background: none repeat scroll 0 0 #5db327;
+    border-color: #5db327;
+    border-radius: 3px;
+    color: white;
+    font-size: 23px;
+    height: 37px;
+    margin-top: 20px;
+    width: 400px;
+}
 .save-category{
   display: none;
 }
 .form-error {
-    border: 2px solid red;
+    border: 2px solid red !important;
+    box-shadow: none !important;
 }
 label.error {
   display: none;
@@ -101,8 +112,6 @@ label.error {
 }
 .product_has_trial input{
   float: left;
-  width: 0px;
-  height: 0px;
 }
 .product_has_trial  label {
   float: right;
@@ -255,3 +264,52 @@ background: none repeat scroll 0 0 #5db327;
   bottom: 215px;
   left: 40px;
 }  
+.left-container input {
+    border-radius: 0;
+    height: 30px;
+    padding-left: 10px;
+    width: 100%;
+    border: 1px solid #c8c8c8;
+}
+.batch-btn{
+ background: none repeat scroll 0 0 #5db327;
+    border-color: #5db327;
+    border-radius: 3px;
+    color: white;
+    font-size: 23px;
+    height: 37px;
+    margin-top: 20px;
+    width: 400px;
+}
+.custom-select select {
+  background: none repeat scroll 0 0 #fff;
+    border: 1px solid #d9d9d9;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+    height: 40px;
+    margin-top: 20px;
+    width: 100%;
+}
+.custom-select input {
+ border: 1px solid #d9d9d9;
+    border-radius: 0;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+    height: 40px;
+    margin-top: 20px;
+    padding-left: 15px;
+    width: 100%;
+}
+.custom-trial input {
+  border: 1px solid #d9d9d9;
+    border-radius: 0;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+    height: 40px;
+    margin-top: 20px;
+    padding-left: 15px;
+    width: 60%;
+}
+
+.batch-append {
+  border-bottom: medium solid;
+  display: inline-block;
+  margin-top: 20px;
+}
