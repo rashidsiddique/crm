@@ -42,7 +42,5 @@ group :development, :test do
   gem 'spring'
   #gem for user registration and authentication
   gem 'devise', '~> 3.4.0'
-  #gem to add batch products
-  gem "cocoon"
 end
 

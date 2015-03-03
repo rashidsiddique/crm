@@ -16,6 +16,8 @@ class Product < ActiveRecord::Base
   RECUURING_BILLING_TYPE = { :Weekly => 1,  :Monthly => 2, :Quaterly => 3, :Custom => 4}
   RECUURING_CUSTOME_TYPE = {:Days => 1, :Weeks => 2, :Months => 3}
 
+  default_scope { order('created_at DESC') }
+
   def is_recurring_billing?
     is_recurring?
   end

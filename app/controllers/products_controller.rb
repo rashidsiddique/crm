@@ -1,7 +1,7 @@
 class ProductsController < AdminsController
   
   def index
-    @products = Product.all.order("updated_at DESC")
+    @products = Product.all
   end
 
   def new
