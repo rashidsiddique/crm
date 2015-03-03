@@ -2,7 +2,6 @@ function submitBatch(){
   var batch = {};
   batch['products'] = []
   $('.form-batch').each(function(){
-    console.log(this);
     jQuery.validator.messages.required = "";
     $(this).validate({
       rules: {
@@ -121,6 +120,12 @@ function submitBatch(){
       alert(xhr.error);
     }
   });
+}
+
+function addNewCategory(add_new) {
+  $(add_new).parent('.product_category').hide();
+  $(add_new).parent('.add_new_category').hide();
+  $(add_new).parent().siblings('.save-category').show();
 }
 
 function saveCategory() {

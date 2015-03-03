@@ -19,8 +19,8 @@
 <div class = "center-container">
 
    <div class = "product_category">      
-      <%= f.select :category_ids, @categories.present? ? @categories.collect{|c| [c.name, c.id]} : "" , {prompt: "Category"}, class: "list_of_categories" %>
-      <%= button_tag("+Add new ",type: 'button', class: "new-category")%> 
+      <%= f.select :category_ids, @categories.present? ? @categories.collect{|c| [c.name, c.id]} : "" , {prompt: "Category"}, id: "list_of_categories" %>
+      <%= button_tag("+Add new ",type: 'button', onClick: "addNewCategory(this)", id:"new-category")%> 
    </div></br>
       
     <div class = "save-category">

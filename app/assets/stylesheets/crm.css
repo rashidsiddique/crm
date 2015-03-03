@@ -17,17 +17,23 @@
     margin-right: 50px;
     width: 500px;
 }
-h2 {
-  width: 500px;
-  margin: 0 auto;
+.add-products h2 {
+ text-align: center;
   margin-bottom: 30px;
 }
+.add-products-form {
+  background: #f0f0f0;
+  border: solid 1px #dedede;
+  font-size: 14px;
+  height: 195px;
+  padding: 20px;
+}
+
 .add-more-products {
     margin: 0 auto;
     width: 0px;
 }
-
-.no_of_forms {
+w.no_of_forms {
     width: 50px;
 }
 .all-products{

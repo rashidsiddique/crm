@@ -1,23 +1,5 @@
-<script>
-  $(document).ready(function(){
-    $('.recurring_custom_bill_on').hide();
-    $('.recurring_custom_type').hide();   
-    var recurring_custom = jQuery('#product_recurring_type');
-    var select = this.value;
-    var custom = "<%= Product::RECUURING_BILLING_TYPE[:Custom] %>";
-    recurring_custom.change(function () {
-      if ($(this).val() == custom){
-        $('.recurring_custom_bill_on').show('slow');
-        $('.recurring_custom_type').show('slow');
-      }
-      else{
-        $('.recurring_custom_bill_on').hide('slow');
-        $('.recurring_custom_type').hide('slow');
-      }
-    });  
-  });
-</script>
 <%= link_to 'Add batch products', batch_products_products_path %>
-<%= render  partial: "add_new_product"%>
-
+<div class = "single-products">
+  <%= render  partial: "add_new_product"%>
+</div>
 <%= link_to 'Back', products_path %>
