@@ -1,8 +1,8 @@
 .left-container {
-  float: left;
-  margin-left: 200px;
-  width: 300px;
-}
+    margin-left: 30px;
+    width: 455px;
+    float: left;
+  }
 
 .center-container {
   float: left;
@@ -13,9 +13,10 @@
 }
 
 .right-contianer {
-    float: left;
-    margin-right: 50px;
-    width: 500px;
+  float: right;
+    margin-right: 0;
+    position: relative;
+    width: 350px;
 }
 .add-products h2 {
  text-align: center;
@@ -30,10 +31,19 @@
 }
 
 .add-more-products {
-    margin: 0 auto;
-    width: 0px;
+  margin-top: 20px;
+  text-align: center;
 }
-w.no_of_forms {
+
+.product-button {
+  background: none repeat scroll 0 0 #5db327;
+  border-color: #5db327;
+  border-radius: 3px;
+  font-size: 14px;
+  margin-top: 20px;
+  width: 160px;
+}
+.no_of_forms {
     width: 50px;
 }
 .all-products{
@@ -49,4 +59,98 @@ w.no_of_forms {
 }
 label.error {
   display: none;
+}
+
+input{
+  border: 1px solid #c8c8c8;
+    border-radius: 0;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+    color: black;
+    height: 40px;
+    padding-left: 15px;
+    width: 166px;
+}
+textarea{
+   border: 1px solid #c8c8c8;
+    border-radius: 0;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+    margin-top: 20px;
+    resize: none;
+}
+select{
+      background: none repeat scroll 0 0 #fff;
+    border: 1px solid #c8c8c8;
+    border-radius: 0;
+    height: 40px;
+}
+
+.bulk-products{
+
+}
+.product_name{
+   float: left;
+    width: 190px;
+}
+.product_price{
+  float: right;
+  width: 190px;
+}
+.product_category {
+    width: 375px;
+}
+.product_category button {
+  background: none repeat scroll 0 0 #5db327;
+  border-color: #5db327;
+  border-radius: 3px;
+  font-size: 14px;
+  margin-top: 20px;
+  width: 160px;
+}
+
+.recuring-product {
+     position: absolute;
+}  
+.recuring-product input {
+  width: 10px;
+  float: left;
+  height:0px;
+}  
+.recuring-product label {
+  float: right;
+}
+.product_has_trial {
+   float: left;
+}
+.product_has_trial input{
+  float: left;
+  width: 0px;
+  height: 0px;
+}
+.product_has_trial  label {
+  float: right;
+}
+.recurring{
+   display: block;
+    margin-top: 15px;
+    width: 185px;
+}
+.product_trial_price > input{
+   margin-left: -145px;
+    margin-right: -11px;
+    margin-top: 9px;
+}
+.product-save-button {
+    background: none repeat scroll 0 0 #5db327;
+    border-color: #5db327;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-top: 20px;
+    width: 160px;
+}
+.bulk-product-forms{
+  background: none repeat scroll 0 0 #f0f0f0;
+  border: 1px solid #c8c8c8;
+  padding: 25px 10px 20px;
+  display: flex;
+  margin-top: 30px;
 }

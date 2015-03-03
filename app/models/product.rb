@@ -8,15 +8,20 @@ class Product < ActiveRecord::Base
   validates :recurring_custom_type, :recurring_custom_bill_on, presence: true, if: :is_recurring_custom_billing?
   validates :trial_price, :trial_days, presence: true, if: :free_trial_allowed?
 
-  
-  
-  # accepts_nested_attributes_for :products, allow_destroy: true
-
   STATUS_VALUES = { active: 1, inactive: 2, archived: 3 }
   RECUURING_BILLING_TYPE = { :Weekly => 1,  :Monthly => 2, :Quaterly => 3, :Custom => 4}
   RECUURING_CUSTOME_TYPE = {:Days => 1, :Weeks => 2, :Months => 3}
 
   default_scope { order('created_at DESC') }
+
+
+  def self.search(search)
+    if search
+      where('name LIKE ?', "%#{search}%")
+    else
+      all
+    end
+  end
 
   def is_recurring_billing?
     is_recurring?

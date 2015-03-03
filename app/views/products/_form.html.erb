@@ -1,25 +1,30 @@
-<div id = "errors">
-</div>
+<div class = "bulk-product-forms">
 <%= form_for :product, :html => {id: "batch-form", :class => "form-batch"}, url:  products_path do |f| %>
 <div class = "left-container">
+   
    <div class = "product_name">
     <%= f.text_field :name , placeholder: "name"%>
-   </div></br>
-
-   <div class = "product_description">
-    <%= f.text_area :description , placeholder: "short description"%>
-   </div></br>
-
+   </div>
+   
    <div class = "product_price">
     <%= f.text_field :price , placeholder: "price"%>
    </div></br>
+
+   <div class = "product_description">
+    <%= f.text_area :description ,size: "62x4", placeholder: "short description"%>
+   </div></br>
+
 </div>
 
 
 <div class = "center-container">
+  
+   <div class = "product_status">
+      <%= f.select :status, Product::STATUS_VALUES, {prompt: "Select status"}%>
+   </div></br>
 
    <div class = "product_category">      
-      <%= f.select :category_ids, @categories.present? ? @categories.collect{|c| [c.name, c.id]} : "" , {prompt: "Category"}, id: "list_of_categories" %>
+      <%= f.select :category_ids, @categories.present? ? @categories.collect{|c| [c.name, c.id]} : "" , {prompt: "Category"}, id: "list_of_categories" %><br>
       <%= button_tag("+Add new ",type: 'button', onClick: "addNewCategory(this)", id:"new-category")%> 
    </div></br>
       
@@ -28,15 +33,12 @@
       <%= button_tag("Save Category ",type: 'button', onClick: "saveCategory()")%>
     </div></br>   
 
-   <div class = "product_status">
-      <%= f.select :status, Product::STATUS_VALUES, {prompt: "Select status"}%>
-   </div></br>
 
 </div>
 
 <div class="right-contianer">
    
-   <div>
+   <div class = "recuring-product">
       <%= f.check_box :is_recurring, class: 'product_is_recurring' %>
       <%= f.label "Recurring billing" %> 
    </div></br>
@@ -79,4 +81,5 @@
  
 <% end %>
 
+</div>
 </div>
