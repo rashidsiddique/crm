@@ -23,11 +23,10 @@
   margin-bottom: 30px;
 }
 .add-products-form {
-  background: #f0f0f0;
-  border: solid 1px #dedede;
   font-size: 14px;
   padding: 20px;
   display: inline-block;
+  margin-left: 15%;
 }
 
 .add-more-products {
@@ -45,6 +44,7 @@
 }
 .no_of_forms {
     width: 50px;
+    height: 30px;
 }
 .all-products{
     float: left;
@@ -59,7 +59,7 @@
     font-size: 23px;
     height: 37px;
     margin-top: 20px;
-    width: 400px;
+    width: 350px;
 }
 .save-category{
   display: none;
@@ -279,7 +279,7 @@ background: none repeat scroll 0 0 #5db327;
     font-size: 23px;
     height: 37px;
     margin-top: 20px;
-    width: 400px;
+    width: 350px;
 }
 .custom-select select {
   background: none repeat scroll 0 0 #fff;
@@ -309,7 +309,44 @@ background: none repeat scroll 0 0 #5db327;
 }
 
 .batch-append {
-  border-bottom: medium solid;
+  background: none repeat scroll 0 0 whitesmoke;
   display: inline-block;
   margin-top: 20px;
+}
+.listing-table {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+}
+ .listing-table a {
+    border-radius: 10px;
+    color: blue;
+    font-family: sans-serif;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 20px;
+    text-decoration: none;
+}
+.listing-table td {
+    line-height: 40px;
+    width: 130px;
+}
+.digg_pagination > a {
+    margin-top: 2px;
+}
+.digg_pagination {
+    left: 35%;
+    position: absolute;
+}
+.listing-table th {
+    text-align: center;
+}
+.trial-pr {
+    position: relative;
+    right: 110px;
+}
+.prt_trial{
+  width: 300px;
 }
