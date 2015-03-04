@@ -1,21 +1,21 @@
 $(document).ready(function(){
     jQuery.validator.messages.required = "";
-        $('.form-batch').validate({
+        $('#batch-form-new').validate({
           rules: {
             "product[name]": {
-            required: true
+                required: true
             },
             "product[description]": {
-            required: true,
+                required: true
             },
             "product[price]": {
-            required: true
+                required: true
             },
             "product[status]": {
-            required: true
+                required: true
             },
             "product[category_ids]": {
-            required: true
+                required: true
             },
             "product[recurring_type]": {
               required: function(element) {
