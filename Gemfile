@@ -42,7 +42,9 @@ group :development, :test do
   gem 'spring'
   #gem for user registration and authentication
   gem 'devise', '~> 3.4.0'
-  #search, sort and paginate table
+  #paginate table
   gem 'will_paginate', '~> 3.0.6'
+  #search and sort table
+  gem 'ransack'
 end
 

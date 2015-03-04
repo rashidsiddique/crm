@@ -1,7 +1,8 @@
 class ProductsController < AdminsController
   
   def index
-    @products = Product.paginate(page: params[:page], per_page: 10)
+    @q = Product.ransack(params[:q])
+    @products = @q.result(distict: true).paginate(page: params[:page], per_page: 10)
   end
 
   def new

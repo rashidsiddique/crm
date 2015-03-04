@@ -352,3 +352,6 @@ background: none repeat scroll 0 0 #5db327;
   right: 0px;
 
 }
+.actions{
+  display: none;
+}
